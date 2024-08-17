@@ -36,8 +36,8 @@ export default function Temperature() {
   const emoji = getWeatherEmoji(temperature);
  
   return (
-    <div class="flex items-center gap-2 py-6 text-2xl">
-      {temperature !== null ? `${temperature}°C` : 'Have a nice day!'}
+    <div class="flex items-center gap-2 my-4 text-2xl">
+      {temperature !== null ? `${temperature.toFixed(1)}°C` : 'Have a nice day!'}
       <span>{emoji}</span>
     </div>
   );

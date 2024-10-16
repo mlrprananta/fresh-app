@@ -27,12 +27,17 @@ export default function Temperature() {
   }, []);
 
   const getWeatherEmoji = (temp: number | null) => {
-    if (temp === null) return "👋";
-    if (temp <= 0) return "❄️";
-    if (temp <= 10) return "🥶";
-    if (temp <= 20) return "😎";
-    if (temp <= 30) return "☀️";
-    return "🔥";
+    if (temp === null) return "👋"; // No temperature available
+    if (temp <= -10) return "🥶"; // Extreme cold
+    if (temp <= 0) return "❄️"; // Freezing
+    if (temp <= 5) return "🧊"; // Very cold
+    if (temp <= 10) return "🌬️"; // Cold
+    if (temp <= 15) return "🧥"; // Chilly
+    if (temp <= 20) return "🌤️"; // Mild
+    if (temp <= 25) return "😎"; // Warm
+    if (temp <= 30) return "☀️"; // Hot
+    if (temp <= 35) return "🌡️"; // Very hot
+    return "🔥"; // Extreme heat
   };
 
   const emoji = getWeatherEmoji(temperature);

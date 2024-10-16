@@ -10,7 +10,7 @@ export default function Frame(props: Props) {
       {...props}
       className="aspect-video rounded-md w-full"
       src={props.source + "&autoplay=1&mute=1"}
-      allow="autoplay"
+      allow="autoplay; fullscreen"
     />
   );
 }
